@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatimah Alaamer | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cursor trail canvas -->
+    <canvas id="cursorCanvas"></canvas>
+
+    <nav>
+        <div class="logo"><span>F.</span> Alaamer</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#ai-chat">Ask AI</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button id="theme-toggle">Night 🌙</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HERO / ABOUT -->
+    <section id="about" class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">✦ Available for opportunities</div>
+            <h1>
+                Hi, I'm <span class="highlight">Fatimah</span><br>
+                I build <span class="typing-wrapper"><span id="typed-text"></span><span class="cursor-blink">|</span></span>
+            </h1>
+            <p class="tagline">Software Engineering student at KFUPM · Graduating May 2027</p>
+            <p>I enjoy solving complex problems and learning about the latest trends in AI-driven development. From immersive VR experiences to full-stack web apps — I build things that matter.</p>
+
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#ai-chat" class="btn-secondary">✦ Ask AI About Me</a>
+            </div>
+
+            <div class="hero-meta">
+                <div class="hero-stat">
+                    <span>Time on site</span>
+                    <span class="stat-value" id="siteTimer">0:00</span>
+                </div>
+                <div class="hero-stat">
+                    <span>Your visit #</span>
+                    <span class="stat-value" id="visitCount">1</span>
+                </div>
+                <div class="hero-stat">
+                    <span>Projects</span>
+                    <span class="stat-value">3+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-header">
+            <div class="section-accent" style="background: var(--pink);"></div>
+            <h2>My Engineering &amp; UX Projects</h2>
+            <p>A collection of work spanning VR design, UX research, and full-stack development.</p>
+        </div>
+
+        <div class="filter-bar">
+            <span class="filter-label">Filter:</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="VR">VR</button>
+            <button class="filter-btn" data-filter="UX">UX</button>
+            <button class="filter-btn" data-filter="Web">Web</button>
+            <select id="sortSelect" class="sort-select">
+                <option value="newest">Sort: Newest</option>
+                <option value="oldest">Sort: Oldest</option>
+                <option value="az">Sort: A → Z</option>
+            </select>
+        </div>
+
+        <div class="project-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- GITHUB REPOSITORIES -->
+    <section id="github">
+        <div class="section-header">
+            <div class="section-accent" style="background: var(--mint);"></div>
+            <h2>GitHub Repositories</h2>
+            <p>Live data pulled from the GitHub API.</p>
+        </div>
+        <div id="githubRepos"></div>
+    </section>
+
+    <!-- AI CHAT SECTION — Innovation Feature -->
+    <section id="ai-chat">
+        <div class="section-header">
+            <div class="section-accent" style="background: var(--lavender);"></div>
+            <h2>✦ Ask AI About Me</h2>
+            <p>Curious about my skills, projects, or experience? Ask anything — powered by Claude AI.</p>
+        </div>
+
+        <div class="ai-chat-container">
+            <div class="ai-chat-window" id="chatWindow">
+                <div class="chat-message ai-message intro-message">
+                    <div class="ai-avatar">✦</div>
+                    <div class="message-bubble">
+                        Hi! I'm Fatimah's AI assistant. Ask me anything about her skills, projects, education, or experience. I'll answer based on what I know about her! 🌸
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-suggestions">
+                <span class="suggestion-label">Try asking:</span>
+                <button class="suggestion-chip" data-q="What projects has Fatimah worked on?">Her projects</button>
+                <button class="suggestion-chip" data-q="What are Fatimah's technical skills?">Her skills</button>
+                <button class="suggestion-chip" data-q="Tell me about Fatimah's education and background.">Her background</button>
+                <button class="suggestion-chip" data-q="What makes Fatimah a strong candidate for a software engineering role?">Why hire her?</button>
+            </div>
+
+            <div class="ai-input-row">
+                <input type="text" id="aiInput" placeholder="Ask something about Fatimah…" autocomplete="off">
+                <button id="aiSendBtn">
+                    <span>Send</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-header">
+            <div class="section-accent" style="background: var(--peach);"></div>
+            <h2>Get In Touch</h2>
+            <p>Have a question or want to work together? Send me a message!</p>
+        </div>
+
+        <form id="contact-form" novalidate>
+            <input type="text" id="name" placeholder="Your Name">
+            <span class="field-error" id="nameError">Please enter your name.</span>
+
+            <input type="email" id="email" placeholder="Your Email">
+            <span class="field-error" id="emailError">Please enter a valid email address.</span>
+
+            <textarea id="message" placeholder="Your Message" rows="5"></textarea>
+            <span class="field-error" id="msgError">Please write a message (minimum 10 characters).</span>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="form-feedback" style="display:none; text-align:center; margin-top:1rem; padding:1rem; border-radius:8px;"></div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo"><span>F.</span> Fatimah Alaamer</div>
+            <p>&copy; 2026 · Built for SWE363 · KFUPM</p>
+            <div class="footer-links">
+                <a href="https://github.com/FatmahAlaamer" target="_blank" rel="noopener">GitHub</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
