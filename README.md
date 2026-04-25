@@ -71,12 +71,13 @@
 │       ├── Cartier.jpg
 │       ├── SAR.jpg
 │       └── Medad.png
-├── docs/
+├── Docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
-├── presentation/
-│   ├── slides.pdf
-│   └── demo-video.mp4
+├── netlify/
+│   └── functions/
+│       └── ask.js
+├── netlify.toml
 └── .gitignore
 ```
 
