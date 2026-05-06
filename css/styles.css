@@ -276,6 +276,22 @@ nav a:hover {
     filter: brightness(0.95);
 }
 
+.btn-drive {
+    background: var(--mint);
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-drive:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+}
+
 /* Hero stats */
 .hero-meta {
     display: flex;
