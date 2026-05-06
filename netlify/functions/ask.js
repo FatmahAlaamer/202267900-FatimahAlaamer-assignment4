@@ -15,7 +15,7 @@ exports.handler = async function (event) {
 - Career interests: Software Engineering, AI-driven development, UX/frontend`;
 
         const requestBody = JSON.stringify({
-            model: 'nvidia/nemotron-3-super-120b-a12b:free',
+            model: 'meta-llama/llama-3.3-70b-instruct:free',
             max_tokens: 300,
             messages: [
                 { role: 'user', content: `${FATIMAH_CONTEXT}\n\nQuestion: ${question}` }
