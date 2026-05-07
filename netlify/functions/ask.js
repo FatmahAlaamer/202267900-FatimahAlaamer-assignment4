@@ -80,7 +80,7 @@ What makes Fatimah unique for branding/design roles:
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${process.env.ANTHROPIC_API_KEY}`,
+                    'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
                     'HTTP-Referer': 'https://precious-taiyaki-1ec317.netlify.app',
                     'X-Title': 'Fatimah Portfolio',
                     'Content-Length': Buffer.byteLength(requestBody)
